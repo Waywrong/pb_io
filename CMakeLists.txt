@@ -1,9 +1,9 @@
 project(pb_test)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+SET(CMAKE_CXX_FLAGS "-g -Wall -Werror -std=c++11")
 
-add_executable(pb_test pb_main.cpp)
+ADD_SUBDIRECTORY(proto)
 
-install(TARGETS pb_test RUNTIME DESTINATION bin)
-
-
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+ADD_EXECUTABLE(pb_test pb_main.cpp)
+TARGET_LINK_LIBRARIES(pb_test proto ${PROTOBUF_LIBRARY})

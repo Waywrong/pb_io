@@ -1,6 +1,13 @@
 Protocol Buffer
 ============
 
-	protoc -I=. --cpp_out=. addressbook.proto
+	    $ mkdir build
+	    $ cd build
+	    $ cmake ..
+	    $ make
 
+generate .h &.cc
+============
+	protoc -I=. --cpp_out=. helloworld.proto
+	
 
